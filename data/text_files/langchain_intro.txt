@@ -1,0 +1,29 @@
+
+   RAG stands for Retrieval-Augmented Generation. It is an AI technique that combines retrieval-based methods with generative models to produce more accurate and context-aware outputs.
+
+1. Problem it solves: Generative AI models can produce fluent text but often hallucinate or give wrong answers if the information is not in their training data. RAG fixes this by retrieving relevant information first and then generating answers based on it.
+
+2. How it works:
+
+   Retriever: Searches a database of documents or knowledge to find relevant information. Can use sparse methods (TF-IDF, BM25) or dense embeddings (FAISS, Pinecone).
+   Generator: A language model (like GPT) that takes the retrieved documents as context and generates the final answer.
+
+3. Types of RAG:
+
+   RAG-Sequence: Generates an answer for each retrieved document and then combines them.
+   RAG-Token: Generates an answer token by token, attending over all retrieved documents.
+
+4. Benefits:
+
+   Reduces hallucinations.
+   Can work with up-to-date or private knowledge.
+   Flexible, works with any retrieval source.
+
+5. Example use case:
+   If you have a collection of Sri Lankan tea export reports and ask “What was the total tea export in 2024?”, RAG will:
+
+   1. Retrieve relevant report(s) containing 2024 export data.
+   2. Feed it to the language model.
+   3. Generate an accurate answer based on the retrieved information.
+
+     
