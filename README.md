@@ -39,25 +39,32 @@ The backend implements a complete RAG pipeline:
 1. Clone the repository:  
 git clone https://github.com/Ilhamlafeer/PDF_RAG-Summarizer.git
 
-
 2. Install dependencies:
 pip install -r requirements.txt
-Place your PDF files in data/pdf/ directory.
 
-Run the Streamlit app:
+3. Place your PDF files in data/pdf/ directory.
+
+4. Run the Streamlit app:
 streamlit run streamlit_app.py
 
-Enter your query and see results with summaries and similarity scores.
+5. Enter your query and see results with summaries and similarity scores.
 
 ---
 
 ## 🛠 Tech Stack
 
 Python 3.13
+
 Streamlit
+
 PyMuPDF
+
 LangChain
+
 ChromaDB
+
 faiss-cpu
+
 SentenceTransformer
+
 
