@@ -12,8 +12,8 @@ from pdf_loader import rag_retriever
 st.set_page_config(page_title="PDF RAG Search", layout="wide")
 st.title("📄 PDF RAG Search")
 
-# --- Hugging Face Summarization setup ---
-HF_TOKEN = os.getenv("HF_TOKEN")  # Make sure your HF token has Inference API access
+# Hugging Face Summarization setup
+HF_TOKEN = os.getenv("HF_TOKEN")
 headers = {"Authorization": f"Bearer {HF_TOKEN}"} if HF_TOKEN else {}
 HF_MODEL_URL = "https://api-inference.huggingface.co/models/sshleifer/distilbart-cnn-12-6"
 
@@ -36,7 +36,7 @@ def summarize_text(text: str, max_length: int = 150) -> str:
     except Exception as e:
         return f"Exception: {e}"
 
-# --- User input ---
+# User input
 query = st.text_input("Ask a question:")
 
 if st.button("Search") and query:
@@ -44,7 +44,7 @@ if st.button("Search") and query:
     # Retrieve top 10 chunks to capture best results
     st.session_state['results'] = rag_retriever.retrieve(query, top_k=10)
 
-# --- Display results ---
+# Display results
 if 'results' in st.session_state:
     results = st.session_state['results']
     query_display = st.session_state.get('query', '')
